@@ -48,3 +48,115 @@ h1 {
     height: 200px;
     width: 200px;
 }
+
+.mimi {
+    width: 250px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.all_portrait_position {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 131px;
+    margin: 55px;
+}
+
+.first_title_photographer{
+    font-family: "DM Sans", sans-serif;
+    color: #D3573C;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    border: repeat;
+    padding-left: 50px;
+    font-size: 36px;
+
+}
+
+.first_title_photographer_long_text{
+    font-family: "DM Sans", sans-serif;
+    color: #D3573C;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    border: repeat;
+    font-size: 36px;
+}
+
+.first_title_photographer_tracy{
+    font-family: "DM Sans", sans-serif;
+    color: #D3573C;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    border: repeat;
+    padding-left: 15px;
+    font-size: 36px;
+}
+
+.pic_title{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.pic_title_short{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    padding-left: 15px;
+}
+
+.photograph_portrait{
+    flex-direction: column;
+    display: flex;
+    padding: 50px;
+}
+
+
+
+.title_localisation{
+    font-family: "DM Sans", sans-serif;
+    color: #901C1C;
+    justify-content: flex-start;
+    display: flex;
+    padding-left: 80px;
+    font-size: 20px;
+}
+
+.title_localisation_long{
+    font-family: "DM Sans", sans-serif;
+    color: #901C1C;
+    justify-content: flex-start;
+    display: flex;
+    padding-left: 33px;
+    font-size: 20px;
+}
+
+.quote_text{
+    font-family: "DM Sans", sans-serif;
+    color: black;
+    justify-content: flex-start;
+    display: flex;
+    font-size: 15px;
+    padding-left: 30px;
+}
+
+.quote_text_long{
+    font-family: "DM Sans", sans-serif;
+    color: black;
+    justify-content: flex-start;
+    display: flex;
+    font-size: 15px;
+}
+
+.tjm{
+    color: black;
+    justify-content: flex-start;
+    display: flex;
+    font-size: 15px;
+    padding-left: 90px;
+}

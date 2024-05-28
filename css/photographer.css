@@ -2,10 +2,19 @@
     display: none;
 }
 
+.position_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
     margin: 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 500px;
 }
 
 .contact_button {
@@ -19,6 +28,44 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.mimi {
+    width: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.quote_text{
+    font-family: "DM Sans", sans-serif;
+    color: black;
+    justify-content: flex-start;
+    display: flex;
+    font-size: 15px;
+    padding-left: 30px;
+}
+
+.title_localisation{
+    font-family: "DM Sans", sans-serif;
+    color: #901C1C;
+    justify-content: flex-start;
+    display: flex;
+    padding-left: 80px;
+    font-size: 20px;
+}
+
+.first_title_photographer{
+    font-family: "DM Sans", sans-serif;
+    color: #D3573C;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    border: repeat;
+    padding-left: 50px;
+    font-size: 36px;
+
 }
 
 .modal {
