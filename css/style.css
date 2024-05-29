@@ -160,3 +160,12 @@ h1 {
     font-size: 15px;
     padding-left: 90px;
 }
+
+
+.header-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 50px;
+    height: 30px;
+}
