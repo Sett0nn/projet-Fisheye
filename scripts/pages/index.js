@@ -63,6 +63,6 @@
         arrayWorks.forEach(element => {
             const figure = document.createElement("figure")
             const img=document.createElement("img")
-            const figcaption
+
             });
     }

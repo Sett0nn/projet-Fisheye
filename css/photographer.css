@@ -168,13 +168,18 @@ form input {
     border-radius: 5px;
 }
 
-.nav-bar{
+.nav-bar {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: end;
     gap: 30px;
     padding-right: 20px;
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    border-style: double;
+    width: 200px;
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
 }
 
 .form_nav-bar{
