@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
       <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
+        <a href="index.html">
       <img src="assets/images/logo.png" class="logo" />
+       </a>
     </header>
     <main id="main">
       <div class="photograph-header">
           <div class="title_position">
-          <span class="first_title_photographer">Mimi Keel</span>
-              <span class="title_localisation">London, UK</span>
+          <span id="fullname" class="first_title_photographer"></span>
+              <span id="town" class="title_localisation"></span>
               <span class="quote_text">Voir le beau dans le quotidien</span>
              </div>
           <div class="position_button">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button></div>
-          <img src="assets/photographers/mimi_keel.png" class="mimi" alt="Mimi Keel"/>
+          <img id="profil" class="mimi" alt="Mimi Keel"/>
       </div>
         </div>
     </main>
@@ -49,12 +53,12 @@
     <img id="picture-1"  class="bird" alt="bird"/>
     <div class="title_under-photo">
     <span class="pic_under-title">Arc-en-ciel</span>
-    <img  class="heart" src="assets/icons/heart-solid.svg"/>
+       <button class="btn" <i class="fa-solid fa-heart"></i></button>
     </div>
 </div>
 
         <div class="img_position">
-            <img id="picture-2" src="assets/photographers/Solitude.png" class="bird" alt="Solitude"/>
+            <img id="picture-2"  class="bird_ditto" alt="Solitude"/>
             <div class="title_under-photo">
                 <span class="pic_under-title">Solitude</span>
                 <img class="heart" src="assets/icons/heart-solid.svg"/>
@@ -62,7 +66,7 @@
         </div>
 
         <div class="img_position">
-            <img src="assets/photographers/Marriage%20à%20la%20mer.png" class="bird" alt="Mariage à la mer"/>
+            <img id="picture-3"  class="bird" alt="Mariage à la mer"/>
             <div class="title_under-photo">
                 <span class="pic_under-title">Mariage à la mer</span>
                 <img class="heart" src="assets/icons/heart-solid.svg"/>
@@ -70,7 +74,7 @@
         </div>
 
         <div class="img_position">
-            <img src="assets/photographers/Picture.png" class="bird" alt="Portrait"/>
+            <img id="picture-4"  class="bird" alt="Portrait"/>
             <div class="title_under-photo">
                 <span class="pic_under-title">Portrait</span>
                 <img class="heart" src="assets/icons/heart-solid.svg"/>
@@ -78,7 +82,7 @@
         </div>
 
         <div class="img_position">
-            <img src="assets/photographers/Ceremonie.png" class="bird" alt="Ceremonie"/>
+            <img id="picture-5"  class="bird" alt="Ceremonie"/>
             <div class="title_under-photo">
                 <span class="pic_under-title">Ceremonie</span>
                 <img class="heart" src="assets/icons/heart-solid.svg"/>
@@ -86,7 +90,7 @@
         </div>
 
         <div class="img_position">
-            <img src="assets/photographers/Enfant.png" class="bird" alt="enfant"/>
+            <img id="picture-6"  class="bird" alt="enfant"/>
             <div class="title_under-photo">
                 <span class="pic_under-title">Enfant</span>
                 <img class="heart" src="assets/icons/heart-solid.svg"/>

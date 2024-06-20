@@ -56,6 +56,11 @@
     padding-left: 100px;
 }
 
+.bird_ditto{
+    height: 25vw;
+    width: 48vh;
+}
+
 .title_under-photo{
     display: flex;
     flex-direction: row;
