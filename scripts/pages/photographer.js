@@ -46,10 +46,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 )
 
+const counterElement = document.getElementById('counter')
+const toggleButton = document.getElementById('toggleButton')
+
+let counter= 11;
+let isIncremented = false;
 
 
+// Ajouter un écouteur d'événements au bouton
+toggleButton.addEventListener('click', function() {
 
-
+if (isIncremented) {
+    // Désincrémenter le compteur
+    counter--;
+    // Changer le texte du bouton pour "Incrémenter"
+    toggleButton.innerHTML = '<i class="fas fa-heart"></i> ';
+} else {
+    // Incrémenter le compteur
+    counter++;
+    // Changer le texte du bouton pour "Désincrémenter"
+    toggleButton.innerHTML = '<i class="fas fa-heart-broken"></i> ';
+}
+// Mettre à jour le texte de l'élément de compteur
+counterElement.innerText = counter;
+// Basculer l'état
+isIncremented = !isIncremented;
+});
 
 
 //ctr alt i / l
