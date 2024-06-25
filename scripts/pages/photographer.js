@@ -46,32 +46,55 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 )
 
-const counterElement = document.getElementById('counter')
-const toggleButton = document.getElementById('toggleButton')
 
-let counter= 11;
-let isIncremented = false;
+allPhotograph.get('photographe.json');
 
+const photograph = getCurrentPhotograph(allPhotographs);
+setPicturesCounters(photograph.pictures, [1, 6]);
 
-// Ajouter un écouteur d'événements au bouton
-toggleButton.addEventListener('click', function() {
-
-if (isIncremented) {
-    // Désincrémenter le compteur
-    counter--;
-    // Changer le texte du bouton pour "Incrémenter"
-    toggleButton.innerHTML = '<i class="fas fa-heart"></i> ';
-} else {
-    // Incrémenter le compteur
-    counter++;
-    // Changer le texte du bouton pour "Désincrémenter"
-    toggleButton.innerHTML = '<i class="fas fa-heart-broken"></i> ';
+function getCurrentPhotograph(photographs){
+    const searchParams = new URLSearchParams(window.location.search);
+    const photographId = Number(searchParams.get('photographId'));
+    return photographs.find(photograph => photograph.id === photographId);
 }
-// Mettre à jour le texte de l'élément de compteur
-counterElement.innerText = counter;
-// Basculer l'état
-isIncremented = !isIncremented;
-});
+// pour les likes initialisation
+function setPicturesCounters(pictures, userLikedPictures) {
+    let globalLikes = 0;
+
+    for (let i = 0; i < pictures.length; i++) {
+        const picture = pictures[i];
+        //Mise à jours du titres
+        const titleElId= `counter-${picture.id}-title`;
+        document.getElementById(titleElId).textContent = picture.title;
+        // Mise à jours des Likes
+        const counterElId= `counter-${picture.id}-likes`;
+        document.getElementById(counterElId).textContent = picture.likes;
+        globalLikes += picture.likes;
+        // Vérification des images aimé
+        const userLikedPicture = userLikedPictures.includes(picture.id);
+        if (userLikedPicture) {
+            const pictureImgEl = document.getElementById(`picture-${picture.id}`);
+            pictureImgEl.style.opacity = '1';
+        }
+    }
+
+    function handlePictureCounter(pictureId) {
+        const elId = `counter-${pictureId}-likes`;
+
+        const pictureImgEl = document.getElementById(`picture-${pictureId}`);
+        const pictureActive = pictureImgEl.style.opacity === ACTIVE_OPACITY;
+        if (pictureActive) {
+            handleCounter(elId, -1);
+            handleCounter(GLOBAL_COUNTER_ELEMENT_ID, -1);
+            pictureImgEl.style.opacity = INACTIVE_OPACITY;
+        } else {
+            handleCounter(elId, 1);
+            handleCounter(GLOBAL_COUNTER_ELEMENT_ID, 1);
+            pictureImgEl.style.opacity = ACTIVE_OPACITY;
+        }
+    }
 
 
+    document.getElementById(GLOBAL_COUNTER_ELEMENT_ID).textContent = globalLikes;
+}
 //ctr alt i / l
