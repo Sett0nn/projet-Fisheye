@@ -19,7 +19,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 townElement.textContent = photographInfo.localisation;
 
                 let profilElement = document.getElementById("profil")
-                profilElement.src = photographInfo.url
+                profilElement.src = photographInfo.url;
+
+                let descriptionElement = document.getElementById("description")
+                descriptionElement.src = photographInfo.description;
+
+
+                    for (let i = 1; i <= 6; i++) {
+                        document.getElementById(`picture-${i}`).src = photographInfo.pictures[i - 1].url;
+
+                        document.getElementById(`counter-${i}-title`).textContent = photographInfo.pictures[i - 1].title;
+
+                        document.getElementById(`counter-${i}-likes`).textContent = photographInfo.pictures[i - 1].likes;
+
+
+
+                        const ACTIVE_OPACITY = '1';
+                        const INACTIVE_OPACITY = '0.5';
+                        const GLOBAL_COUNTER_ELEMENT_ID = 'global-likes';
+
+
+                        function setPicturesCounters(pictures, userLikedPictures) {
+                            let globalLikes = 0;
+
+                            pictures.forEach(picture => {
+                                globalLikes += picture.likes;
+                                if (userLikedPictures.includes(picture.id)) {
+                                    document.getElementById(`picture-${picture.id}`).style.opacity = ACTIVE_OPACITY;
+                                }
+                            });
+
+                            document.getElementById(GLOBAL_COUNTER_ELEMENT_ID).textContent = globalLikes;
+                        }}
 
 
 
@@ -47,54 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
 )
 
 
-allPhotograph.get('photographe.json');
 
-const photograph = getCurrentPhotograph(allPhotographs);
-setPicturesCounters(photograph.pictures, [1, 6]);
-
-function getCurrentPhotograph(photographs){
-    const searchParams = new URLSearchParams(window.location.search);
-    const photographId = Number(searchParams.get('photographId'));
-    return photographs.find(photograph => photograph.id === photographId);
+function incrementCounter (picId){
+    const elId = "counter-"+ picId +"-likes"
+    let counter = document.getElementById(elId);
+   document.getElementById(elId).textContent = Number(counter.textContent) + 1;
 }
-// pour les likes initialisation
-function setPicturesCounters(pictures, userLikedPictures) {
-    let globalLikes = 0;
 
-    for (let i = 0; i < pictures.length; i++) {
-        const picture = pictures[i];
-        //Mise à jours du titres
-        const titleElId= `counter-${picture.id}-title`;
-        document.getElementById(titleElId).textContent = picture.title;
-        // Mise à jours des Likes
-        const counterElId= `counter-${picture.id}-likes`;
-        document.getElementById(counterElId).textContent = picture.likes;
-        globalLikes += picture.likes;
-        // Vérification des images aimé
-        const userLikedPicture = userLikedPictures.includes(picture.id);
-        if (userLikedPicture) {
-            const pictureImgEl = document.getElementById(`picture-${picture.id}`);
-            pictureImgEl.style.opacity = '1';
-        }
-    }
-
-    function handlePictureCounter(pictureId) {
-        const elId = `counter-${pictureId}-likes`;
-
-        const pictureImgEl = document.getElementById(`picture-${pictureId}`);
-        const pictureActive = pictureImgEl.style.opacity === ACTIVE_OPACITY;
-        if (pictureActive) {
-            handleCounter(elId, -1);
-            handleCounter(GLOBAL_COUNTER_ELEMENT_ID, -1);
-            pictureImgEl.style.opacity = INACTIVE_OPACITY;
-        } else {
-            handleCounter(elId, 1);
-            handleCounter(GLOBAL_COUNTER_ELEMENT_ID, 1);
-            pictureImgEl.style.opacity = ACTIVE_OPACITY;
-        }
-    }
+console.log()
 
 
-    document.getElementById(GLOBAL_COUNTER_ELEMENT_ID).textContent = globalLikes;
-}
-//ctr alt i / l
+
