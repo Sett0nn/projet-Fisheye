@@ -29,7 +29,7 @@ function closeModal() {
 
 // Event listeners
 openModalBtn.addEventListener('click', displayModal);
-closeModalBtn.addEventListener('click', closeModal);
+//closeModalBtn.addEventListener('click', closeModal);
 
 // Close modal when the Escape key is pressed
 document.addEventListener('keydown', (e) => {

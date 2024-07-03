@@ -1,5 +1,8 @@
+console.log("enter in my counter");
+
+
 document.addEventListener("DOMContentLoaded", function () {
-        fetch('scripts/utils/photographe.json')
+        fetch('src/utils/photographer.json')
             .then(response => response.json())
             .then(data => {
 
@@ -22,7 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 profilElement.src = photographInfo.url;
 
                 let descriptionElement = document.getElementById("description")
-                descriptionElement.src = photographInfo.description;
+                descriptionElement.textContent = photographInfo.description;
+
+
 
 
                     for (let i = 1; i <= 6; i++) {
@@ -79,13 +84,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// eslint-disable-next-line no-unused-vars
 function incrementCounter (picId){
-    const elId = "counter-"+ picId +"-likes"
+    console.log("enter in my function");
+    const elId = "counter-"+ picId +"-likes";
+    console.log("elId: " + elId);
     let counter = document.getElementById(elId);
+    console.log("elId: " + elId);
    document.getElementById(elId).textContent = Number(counter.textContent) + 1;
 }
 
-console.log()
+
 
 
 

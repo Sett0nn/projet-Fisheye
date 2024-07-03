@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
       <link href="css/photographer.css" rel="stylesheet" type="text/css" />
@@ -8,23 +8,28 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
       <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
-        <a href="index.html">
-      <img src="assets/images/logo.png" class="logo" />
+    <header class="photographer_banner">
+        <a href="index.html" aria-label="Fisheye Home Page">
+      <img src="assets/images/logo.png" class="logo"  alt="fisheye logo"/>
        </a>
     </header>
     <main id="main">
       <div class="photograph-header">
+
+
           <div class="title_position">
           <span id="fullname" class="first_title_photographer"></span>
               <span id="town" class="title_localisation"></span>
-              <span class="quote_text">Voir le beau dans le quotidien</span>
-             </div>
+                <span  id="textcontent" class="quote_text">Voir le beau dans le quotidien</span>
+
+          </div>
           <div class="position_button">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button></div>
+        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+          </div>
           <img id="profil" class="mimi" alt="Mimi Keel"/>
       </div>
         </div>
@@ -47,57 +52,88 @@
         <div class="position_title">
     <H2>Trier par</H2></div>
 
+
+    <div class="dropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="options">
+        <div class="selected">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 class="dropdown-icon">
+                <g clip-path="url(#clip0_173725_75)">
+                    <path d="M9.88 20.5466L16 14.44L22.12 20.5466L24 18.6666L16 10.6666L8 18.6666L9.88 20.5466Z"
+                          fill="white" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_173725_75">
+                        <rect width="32" height="32" fill="white" transform="translate(32 32) rotate(-180)" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <ol id="options" class="dropdown-menu" role="listbox" aria-label="Options">
+            <li class="dropdown-option" tabindex="0" role="option" id="filter-popularite" data-order="1">
+                Popularité</li>
+            <li class="dropdown-divider" role="separator"></li>
+            <li class="dropdown-option" tabindex="0" role="option" id="filter-date" data-order="2">Date</li>
+            <li class="dropdown-divider" role="separator"></li>
+            <li class="dropdown-option" tabindex="0" role="option" id="filter-titre" data-order="3">Titre
+            </li>
+        </ol>
+    </div>
+
+
+
     <div class="all_picture_gallery" >
 
 <div class="img_position">
     <img id="picture-1"  class="bird" alt="bird"/>
     <div class="title_under-photo">
-    <span class="pic_under-title">Arc-en-ciel</span>
-        <img class="heart" src="assets/icons/heart-solid.svg" onclick="incremantPictureLikes(1)"/>
-<!--       <div id="counter">11</div>-->
-<!--        <button id="toggleButton" class="btn" >-->
-<!--        <i class="fas fa-heart"></i>-->
-<!--           </button>-->
+        <span class="pic_under-title" id="counter-1-title">Arc-en-ciel</span>
+        <span class="pic_under-likes" id="counter-1-likes">0</span>
+        <img class="heart" src="assets/icons/heart-solid.svg" onclick="incrementCounter(this)" />
     </div>
 </div>
 
         <div class="img_position">
             <img id="picture-2"  class="bird_ditto" alt="Solitude"/>
             <div class="title_under-photo">
-                <span class="pic_under-title">Solitude</span>
-                <img class="heart" src="assets/icons/heart-solid.svg"/>
+                <span id="counter-2-title" class="pic_under-title">Solitude</span>
+                <span id="counter-2-likes" class="pic_likes">0</span>
+                <img class="heart" src="assets/icons/heart-solid.svg" onclick="incrementCounter(2)" />
             </div>
         </div>
 
         <div class="img_position">
             <img id="picture-3"  class="bird" alt="Mariage à la mer"/>
             <div class="title_under-photo">
-                <span class="pic_under-title">Mariage à la mer</span>
-                <img class="heart" src="assets/icons/heart-solid.svg"/>
+                <span id="counter-3-title" class="pic_under-title">Mariage à la mer</span>
+                <span id="counter-3-likes" class="pic_likes">0</span>
+                <img class="heart" src="assets/icons/heart-solid.svg" onclick="incrementCounter(3)"/>
             </div>
         </div>
 
         <div class="img_position">
             <img id="picture-4"  class="bird" alt="Portrait"/>
             <div class="title_under-photo">
-                <span class="pic_under-title">Portrait</span>
-                <img class="heart" src="assets/icons/heart-solid.svg"/>
+                <span id="counter-4-title" class="pic_under-title">Portrait</span>
+                <span id="counter-4-likes" class="pic_likes">0</span>
+                <img class="heart" src="assets/icons/heart-solid.svg" onclick="incrementCounter(4)"/>
             </div>
         </div>
 
         <div class="img_position">
             <img id="picture-5"  class="bird" alt="Ceremonie"/>
             <div class="title_under-photo">
-                <span class="pic_under-title">Ceremonie</span>
-                <img class="heart" src="assets/icons/heart-solid.svg"/>
+                <span id="counter-5-title" class="pic_under-title">Cérémonie</span>
+                <span id="counter-5-likes" class="pic_likes">0</span>
+                <img class="heart" src="assets/icons/heart-solid.svg" onclick="incrementCounter(5)"/>
             </div>
         </div>
 
         <div class="img_position">
             <img id="picture-6"  class="bird" alt="enfant"/>
             <div class="title_under-photo">
-                <span class="pic_under-title">Enfant</span>
-                <img class="heart" src="assets/icons/heart-solid.svg"/>
+                <span id="counter-6-title" class="pic_under-title">Enfant</span>
+                <span id="counter-6-likes" class="pic_likes">0</span>
+                <img class="heart" src="assets/icons/heart-solid.svg" onclick="incrementCounter(6)"/>
 
             </div>
         </div>
@@ -109,8 +145,13 @@
             <img class="heart" src="assets/icons/heart-solid-black.png"/>
         <div class="button-header"><span>300€/jour</span></div>
     </div>
-
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+<!--    <div>-->
+<!--        Total Likes: <span id="global-likes-counter">0</span>-->
+<!--    </div>-->
+<!--    </div>-->
+<div class="overlay"></div>
+    <script type="module" src="src/pages/modal.js"></script>
+    <script type="module" src="/src/utils/contactForm.js"></script>
+    <script type="module" src= "/src/pages/photographer.js" defer></script>
   </body>
 </html>
