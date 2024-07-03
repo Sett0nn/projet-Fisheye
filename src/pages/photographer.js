@@ -90,8 +90,9 @@ function incrementCounter (picId){
     const elId = "counter-"+ picId +"-likes";
     console.log("elId: " + elId);
     let counter = document.getElementById(elId);
-    console.log("elId: " + elId);
+    console.log(counter);
    document.getElementById(elId).textContent = Number(counter.textContent) + 1;
+    console.log(elId);
 }
 
 
